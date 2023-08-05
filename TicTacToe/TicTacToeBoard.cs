@@ -17,7 +17,7 @@ namespace TicTacToe
             Turn = Player.PlayerOne;
         }
 
-        public TicTacToeBoard(Player Turn, Player[,] Board)
+        public TicTacToeBoard(Player[,] Board, Player Turn)
         {
             this.Turn = Turn;
             this.Board = Board;
@@ -46,6 +46,14 @@ namespace TicTacToe
 
         public bool MakeMove(int row, int col)
         {
+            if (GetWinner(out Player player))
+            {
+                return false;
+            }
+
+            {
+                
+            }
             if (Board[row, col] != Player.None)
             {
                 return false;
@@ -56,7 +64,7 @@ namespace TicTacToe
             return true;
         }
 
-        public bool getWinner(out Player winner)
+        public bool GetWinner(out Player winner)
         {
             winner = Player.None;
 
@@ -96,7 +104,7 @@ namespace TicTacToe
             {
                 for(int j = 0; j < Board.GetLength(1); j++)
                 {
-                    if (Board[i,j] != Player.None)
+                    if (Board[i,j] == Player.None)
                     {
                         isDraw = false;
                         break;

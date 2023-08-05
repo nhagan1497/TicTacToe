@@ -11,5 +11,5 @@ board.MakeMove(3);
 board.MakeMove(9);
 
 Player winner;
-board.getWinner(out winner);
+board.GetWinner(out winner);
 Console.WriteLine(winner);
