@@ -16,7 +16,7 @@
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.tictactoeui</ApplicationId>
-		<ApplicationIdGuid>a890c297-71e1-458e-99dc-987d4bcd26e7</ApplicationIdGuid>
+		<ApplicationIdGuid>df9f2a49-f50a-4d2e-856d-4362f89797d6</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -50,6 +50,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="GameBoard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

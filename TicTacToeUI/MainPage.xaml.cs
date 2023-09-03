@@ -20,5 +20,10 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        private async void OnGameButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GameBoard());
+        }
     }
 }
