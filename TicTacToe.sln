@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe\TicT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeServer", "TicTacToeServer\TicTacToeServer.csproj", "{9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeUI", "TicTacToeUI\TicTacToeUI.csproj", "{5548E940-6931-4228-8E18-37521160E566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeTests", "TicTacToeTests\TicTacToeTests.csproj", "{D7BF2983-22A4-4AFE-9597-C1BCF176451E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeTests", "TicTacToeTests\TicTacToeTests.csproj", "{D7BF2983-22A4-4AFE-9597-C1BCF176451E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeUI", "TicTacToeUI\TicTacToeUI.csproj", "{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,16 +25,16 @@ Global
 		{9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5548E940-6931-4228-8E18-37521160E566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5548E940-6931-4228-8E18-37521160E566}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5548E940-6931-4228-8E18-37521160E566}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{5548E940-6931-4228-8E18-37521160E566}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5548E940-6931-4228-8E18-37521160E566}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5548E940-6931-4228-8E18-37521160E566}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{D7BF2983-22A4-4AFE-9597-C1BCF176451E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7BF2983-22A4-4AFE-9597-C1BCF176451E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7BF2983-22A4-4AFE-9597-C1BCF176451E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7BF2983-22A4-4AFE-9597-C1BCF176451E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
