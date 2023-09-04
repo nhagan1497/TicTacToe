@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TicTacToeServer\TicTacToeServer.csproj" />
+    <ProjectReference Include="..\TicTacToeServer\TicTacToeNetwork.csproj" />
     <ProjectReference Include="..\TicTacToe\TicTacToe.csproj" />
   </ItemGroup>
 
