@@ -10,6 +10,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeTests", "TicTacToeTests\TicTacToeTests.csproj", "{D7BF2983-22A4-4AFE-9597-C1BCF176451E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeUI", "TicTacToeUI\TicTacToeUI.csproj", "{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}"
+	ProjectSection(ProjectDependencies) = postProject
+		{348FD855-6B94-4D4D-8A4A-E5E6D9BB3D8B} = {348FD855-6B94-4D4D-8A4A-E5E6D9BB3D8B}
+		{9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975} = {9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
