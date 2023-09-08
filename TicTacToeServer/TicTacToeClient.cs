@@ -14,9 +14,10 @@ namespace TicTacToeNetwork
     {
         private IPEndPoint EndPoint { get; set; }
         private TicTacToeBoard Board { get; set; }
-        private Player PlayerNumber { get; set; }
-        private TcpClient Client { get; set; }
-        private int ConnectionID { get; set; }
+        private Player MyPlayerNumber { get; set; }
+        private int PlayerID { get; set; }
+        private CancellationTokenSource CTSource { get; set; }
+        private CancellationToken CToken { get; set; }
 
         public TicTacToeClient(string ipAddress, int port) : this(new IPEndPoint(IPAddress.Parse(ipAddress), port))
         {
@@ -29,28 +30,94 @@ namespace TicTacToeNetwork
         {
             EndPoint = endPoint;
             Board = new TicTacToeBoard();
-            PlayerNumber = Player.None;
-            Client = new TcpClient();
-            ConnectionID = -1;
+            MyPlayerNumber = 0;
+            PlayerID = -1;
+            CTSource = new CancellationTokenSource();
+            CToken = CTSource.Token;
         }
 
-        public async Task ConnectToServer()
+        private async Task<Message?> SendToServer(Message message)
         {
-            await Client.ConnectAsync(EndPoint);
-            await using NetworkStream stream = Client.GetStream();
+            using TcpClient tcpClient = new TcpClient();
+            await tcpClient.ConnectAsync(EndPoint, CToken);
 
-            var buffer = new byte[1_024];
-            int received = await stream.ReadAsync(buffer);
+            using NetworkStream stream = tcpClient.GetStream();
+            await message.SendMessageAsync(stream, CToken);
 
-            var jsonMessage = Encoding.UTF8.GetString(buffer, 0, received);
-            Message? message = JsonSerializer.Deserialize<Message>(jsonMessage);
+            return await Message.GetMessageAsync(stream, CToken);
+        }
 
-            if (message == null)
+        public async Task<bool> StartNewGame()
+        {
+            Message message = new();
+            Message? returnMessage = await SendToServer(message);
+
+            if (returnMessage == null)
+                return false;
+
+            if (returnMessage.PlayerID == null || returnMessage.Board == null || returnMessage.PlayerNumber == null || returnMessage.Turn == null)
+                return false;
+
+            MyPlayerNumber = returnMessage.PlayerNumber switch
             {
-                Console.WriteLine("Client failed to deserialize message.");
-                return;
+                1 => Player.PlayerOne, 2 => Player.PlayerTwo, _ => Player.None
+            };
+
+            Board = returnMessage.GetTTTBoard();
+            PlayerID = (int)returnMessage.PlayerID;
+
+            return true;
+
+        }
+
+        public async Task<bool> MakeMove(int square)
+        {
+            if (square < 1 || square > 9)
+                return false;
+
+            if (Board.Turn != MyPlayerNumber)
+            {
+                await GetBoard();
+                return false;
             }
-            Console.WriteLine($"Message received: \"{message}\"");
+
+            Message message = new Message();
+            message.Move = square;
+            message.PlayerID = PlayerID;
+
+            Message? returnMessage = await SendToServer(message);
+
+            if (returnMessage == null)
+                return false;
+
+            if (returnMessage.Success == false)
+            {
+                if (returnMessage.Board != null)
+                {
+                    Board = returnMessage.GetTTTBoard();
+                }
+                return false;
+            }
+
+            // Move made successfully, make the change locally and return true
+            Board.MakeMove(square);
+            return true;
+        }
+
+        public async Task<bool> GetBoard()
+        {
+            Message message = new Message();
+            message.GetBoard = true;
+            message.PlayerID = PlayerID;
+
+            Message? returnMessage = await SendToServer(message);
+            if(returnMessage == null)
+            {
+                return false;
+            }
+
+            Board = returnMessage.GetTTTBoard();
+            return true;
         }
 
         public void Dispose()
@@ -62,7 +129,7 @@ namespace TicTacToeNetwork
         {
             if (disposing)
             {
-                Client.Dispose();
+                CTSource.Cancel();
             }
         }
     }
