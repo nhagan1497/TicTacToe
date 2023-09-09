@@ -1,6 +1,4 @@
-﻿/*
-using System.Text.Json;
-using TicTacToeNetwork;
+﻿using TicTacToeNetwork;
 
 // Instance of the server to handle requests for the UI that's being tested
 using TicTacToeServer server = new();
@@ -23,7 +21,7 @@ while (command != "exit")
     if (String.IsNullOrEmpty(command))
         continue;
     command = command.ToLower();
-    switch(command)
+    switch (command)
     {
         case "newgame":
             response = await player2.StartNewGame();
@@ -41,7 +39,7 @@ while (command != "exit")
             Console.WriteLine(response);
             break;
         case "getboard":
-            response =await player2.GetBoard();
+            response = await player2.GetBoard();
             Console.WriteLine(response);
             break;
         case "help":
@@ -60,4 +58,3 @@ while (command != "exit")
 
 server.Stop();
 await runningServer;
-*/

@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeUI", "TicTacToeUI\
 		{9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975} = {9B2A1EF2-D7F7-4377-A9AA-98C2B0E90975}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerDriver", "ServerDriver\ServerDriver.csproj", "{D2E47E7C-025D-4EF3-9311-932FB6FB1819}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BDFA8E5E-C928-4B18-A6D7-A2E96330ED97}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D2E47E7C-025D-4EF3-9311-932FB6FB1819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E47E7C-025D-4EF3-9311-932FB6FB1819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E47E7C-025D-4EF3-9311-932FB6FB1819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E47E7C-025D-4EF3-9311-932FB6FB1819}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

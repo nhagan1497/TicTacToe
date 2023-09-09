@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TicTacToeUI.GameBoard"
              Title="GameBoard">
+
+    <ContentPage.Resources>
+        <Style x:Key="invisibleButton"
+               TargetType="ImageButton"/>
+
+
+    </ContentPage.Resources>
     <VerticalStackLayout
         Spacing="25"
         Padding="30,0"
@@ -31,17 +38,17 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent"/>
-            <Button Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent"/>
-            <Button Grid.Row="0" Grid.Column="4" BackgroundColor="Transparent"/>
+            <ImageButton Source="tictactoe_x.png" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent"/>
+            <ImageButton Source="tictactoe_o.png" Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" />
+            <ImageButton Grid.Row="0" Grid.Column="4" BackgroundColor="Transparent"/>
 
-            <Button Grid.Row="2" Grid.Column="0" BackgroundColor="Transparent"/>
-            <Button Grid.Row="2" Grid.Column="2" BackgroundColor="Transparent"/>
-            <Button Grid.Row="2" Grid.Column="4" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="2" Grid.Column="0" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="2" Grid.Column="2" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="2" Grid.Column="4" BackgroundColor="Transparent"/>
 
-            <Button Grid.Row="4" Grid.Column="0" BackgroundColor="Transparent"/>
-            <Button Grid.Row="4" Grid.Column="2" BackgroundColor="Transparent"/>
-            <Button Grid.Row="4" Grid.Column="4" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="4" Grid.Column="0" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="4" Grid.Column="2" BackgroundColor="Transparent"/>
+            <ImageButton Grid.Row="4" Grid.Column="4" BackgroundColor="Transparent"/>
 
             <!-- Horizontal Grid Lines-->
             <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="Black"/>
