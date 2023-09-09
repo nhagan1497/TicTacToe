@@ -13,7 +13,7 @@ namespace TicTacToeNetwork
     public class TicTacToeClient : IDisposable
     {
         private IPEndPoint EndPoint { get; set; }
-        private TicTacToeBoard Board { get; set; }
+        public TicTacToeBoard Board { get; private set; }
         private Player MyPlayerNumber { get; set; }
         private int PlayerID { get; set; }
         private CancellationTokenSource CTSource { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace TicTacToeUI
+﻿using TicTacToeNetwork;
+
+namespace TicTacToeUI
 {
     public partial class App : Application
     {
